@@ -8,8 +8,7 @@ pipeline {
             description: 'Select the branch to build', 
             name: 'BRANCH_NAME', 
             quickFilterEnabled: true, 
-            type: 'PT_BRANCH',
-            repo: 'https://github.com/tiket/DATA-RANGERS-KFP-OPERATOR.git'
+            type: 'PT_BRANCH'
         )
     }
 
