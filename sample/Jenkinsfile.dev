@@ -8,8 +8,7 @@ pipeline {
             description: 'Select the branch to build', 
             name: 'BRANCH_NAME', 
             quickFilterEnabled: true, 
-            type: 'PT_BRANCH',
-            useRepository: 'https://github.com/tiketdatastanley/centralized-operators.git'
+            type: 'PT_BRANCH'
         )
     }
 
