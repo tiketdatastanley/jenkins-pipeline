@@ -30,8 +30,9 @@ pipeline {
         stage('Build and Test') {
             steps {
                 echo "Building and testing on branch ${params.BRANCH_NAME}"
-            
+            }    
         }
+
 
         stage('Deploy') {
             steps {
