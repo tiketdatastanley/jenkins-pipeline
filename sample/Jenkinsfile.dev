@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    parameters {
+        gitParameter(
+            branchFilter: 'origin/(.*)', 
+            defaultValue: 'develop', 
+            description: 'Select the branch to build', 
+            name: 'BRANCH_NAME', 
+            quickFilterEnabled: true, 
+            type: 'PT_BRANCH',
+            repo: 'https://github.com/tiket/DATA-RANGERS-KFP-OPERATOR.git'
+        )
+    }
+
+    stages {
+        stage('Build and Test') {
+            steps {
+                echo "Building and testing on branch ${params.BRANCH_NAME}"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deployment steps...'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded! Send notifications or perform additional actions here.'
+        }
+
+        failure {
+            echo 'Pipeline failed! Send notifications or perform additional actions here.'
+        }
+    }
+}
