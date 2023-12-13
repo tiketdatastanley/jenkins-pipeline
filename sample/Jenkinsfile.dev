@@ -13,10 +13,24 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    checkout(
+                        [
+                            $class: 'GitSCM', 
+                            branches: [[name: "*/${params.BRANCH_NAME}"]], 
+                            userRemoteConfigs: [[url: 'https://github.com/tiket/DATA-RANGERS-KFP-OPERATOR.git']]
+                        ]
+                    )
+                }
+            }
+        }
+
         stage('Build and Test') {
             steps {
                 echo "Building and testing on branch ${params.BRANCH_NAME}"
-            }
+            
         }
 
         stage('Deploy') {
