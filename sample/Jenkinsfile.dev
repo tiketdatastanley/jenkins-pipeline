@@ -24,6 +24,8 @@ pipeline {
                         ]
                     )
                 }
+                echo "${params.BRANCH_NAME}"
+                echo "SUCCESS"
             }
         }
 
