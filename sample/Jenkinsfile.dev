@@ -20,7 +20,7 @@ pipeline {
                         [
                             $class: 'GitSCM', 
                             branches: [[name: "*/${params.BRANCH_NAME}"]], 
-                            userRemoteConfigs: [[url: 'https://github.com/tiket/DATA-RANGERS-KFP-OPERATOR.git']]
+                            userRemoteConfigs: [[url: 'https://github.com/tiketdatastanley/centralized-operators.git']]
                         ]
                     )
                 }
